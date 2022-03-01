@@ -35,4 +35,8 @@ export class TaskService {
     const toggleUrl = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(toggleUrl, task, httpOptions);
   }
+
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, task, httpOptions);
+  }
 }
